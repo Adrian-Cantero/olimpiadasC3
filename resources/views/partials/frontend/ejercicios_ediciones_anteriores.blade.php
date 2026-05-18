@@ -23,7 +23,7 @@
         @foreach ($total_ediciones->sortByDesc('num_olimpiada') as $edicion)
             <li class="icon solid">
                 <a href="{{ $edicion->cursos?->enlace_moddle }}">
-                    <h4><b>{{ $edicion->num_olimpiada }} Olimpiadas</b> (Curso {{ $edicion->cursos?->fecha_inicial }} -
+                    <h4><b>{{ $edicion->num_olimpiadas_romano }} Olimpiadas</b> (Curso {{ $edicion->cursos?->fecha_inicial }} -
                         {{ $edicion->cursos?->fecha_final }})</h4>
                 </a>
             </li>
