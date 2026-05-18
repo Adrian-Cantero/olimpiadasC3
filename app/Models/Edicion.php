@@ -49,6 +49,11 @@ class Edicion extends Model
         return $this->belongsToMany(Grupo::class, 'edicion_grupo');
     }
 
+    public function cursos()
+    {
+        return $this->hasOne(Curso::class, 'edicion_id');
+    }
+
 }
 
 //faltan añadir las relaciones entre tablas

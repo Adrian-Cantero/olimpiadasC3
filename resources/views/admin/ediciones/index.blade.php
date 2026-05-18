@@ -15,6 +15,7 @@
                             <tr>
                                 <th class="px-4 py-2">ID</th>
                                 <th class="px-4 py-2">Curso Escolar</th>
+                                <th class="px-4 py-2">Numero de Olimpiada</th>
                                 <th class="px-4 py-2">Fecha Celebracion</th>
                                 <th class="px-4 py-2">Fecha Apertura</th>
                                 <th class="px-4 py-2">Fecha Cierre</th>
@@ -27,6 +28,7 @@
                                 <tr>
                                     <td class="border px-4 py-2">{{ $edicion->id }}</td>
                                     <td class="border px-4 py-2">{{ $edicion->curso_escolar }}</td>
+                                    <td class="border px-4 py-2">{{ $edicion->num_olimpiada }}</td>
                                     <td class="border px-4 py-2">{{ $edicion->fecha_celebracion }}</td>
                                     <td class="border px-4 py-2">{{ $edicion->fecha_apertura }}</td>
                                     <td class="border px-4 py-2">{{ $edicion->fecha_cierre }}</td>

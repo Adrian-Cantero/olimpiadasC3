@@ -11,14 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ediciones', function (Blueprint $table) {
+        Schema::create('cursos', function (Blueprint $table) {
             $table->id();
-            $table->string('curso_escolar', 10);
-            $table->integer('num_olimpiada');
-            $table->date('fecha_celebracion');
-            $table->date('fecha_apertura');
-            $table->date('fecha_cierre');
-            $table->string('css_file', 100)->nullable();
+
+            $table->unsignedBigInteger('edicion_id');
+            $table->foreign('edicion_id')->references('id')->on('ediciones')->onDelete('cascade');
+
+            $table->year('fecha_inicial');
+            $table->year('fecha_final');
+            $table->string('enlace_moddle');
+
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ediciones');
+        Schema::dropIfExists('cursos');
     }
 };

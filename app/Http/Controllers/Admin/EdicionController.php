@@ -32,6 +32,7 @@ class EdicionController extends Controller
     {
         $request->validate([
             'curso_escolar' => 'required|string|max:10',
+            'num_olimpiada' => 'required|integer',
             'fecha_celebracion' => 'required|date',
             'fecha_apertura' => 'required|date',
             'fecha_cierre' => 'required|date',
@@ -40,6 +41,7 @@ class EdicionController extends Controller
 
         Edicion::create([
             'curso_escolar' => $request->curso_escolar,
+            'num_olimpiada' => $request->num_olimpiada,
             'fecha_celebracion' => $request->fecha_celebracion,
             'fecha_apertura' => $request->fecha_apertura,
             'fecha_cierre' => $request->fecha_cierre,
@@ -69,6 +71,7 @@ class EdicionController extends Controller
     {
         $request->validate([
             'curso_escolar' => 'required|string|max:10',
+            'num_olimpiada' => 'required|integer',
             'fecha_celebracion' => 'required|date',
             'fecha_apertura' => 'required|date',
             'fecha_cierre' => 'required|date',
@@ -81,6 +84,7 @@ class EdicionController extends Controller
 
         $edicion->update([
             'curso_escolar' => $request->curso_escolar,
+            'num_olimpiada' => $request->num_olimpiada,
             'fecha_celebracion' => $request->fecha_celebracion,
             'fecha_apertura' => $request->fecha_apertura,
             'fecha_cierre' => $request->fecha_cierre,

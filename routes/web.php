@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoriaController;
 use App\Http\Controllers\Admin\CentroController;
 use App\Http\Controllers\Admin\CicloController;
+use App\Http\Controllers\Admin\CursoController;
 use App\Http\Controllers\Admin\EdicionFileController;
 use App\Http\Controllers\Admin\GradoController;
 use App\Http\Controllers\Admin\GrupoController;
@@ -15,6 +16,7 @@ use App\Http\Controllers\Admin\ParticipanteController;
 use App\Http\Controllers\Admin\EdicionController;
 use App\Http\Controllers\Admin\ResultadoController;
 use App\Http\Controllers\SessionController;
+use App\Models\Edicion;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +30,9 @@ use App\Http\Controllers\SessionController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $total_ediciones = Edicion::with('cursos')->get();
+
+    return view('welcome', compact('total_ediciones'));
 })->name('home');
 
 Route::post('/inscripcion', [InscripcionesController::class, 'store'])->name('inscripcion');
@@ -47,6 +51,9 @@ Route::prefix('/dashboard')->middleware(['auth', 'verified'])->group(function ()
     Route::resource('grados.ciclos', CicloController::class)->shallow();
     Route::resource('ediciones', EdicionController::class)
         ->parameters(['ediciones' => 'edicion']);
+    Route::resource('cursos', CursoController::class)
+        ->parameters(['cursos' => 'curso'])
+        ->except(['delete']);
     Route::resource('resultados', ResultadoController::class);
     Route::resource('grados', GradoController::class);
     Route::get('grupos/{grupo}/crearUsuarioMoodle', [GrupoController::class, 'crearUsuarioMoodle'])->name('grupos.crearUsuarioMoodle');
