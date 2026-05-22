@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
             $this->call(CursoSeeder::class);
             $this->call(PruebasTableSeeder::class);
         }
+        $this->call(ResultadoOlimpiadaSeeder::class);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
