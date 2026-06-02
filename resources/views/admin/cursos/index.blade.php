@@ -15,8 +15,8 @@
                             <tr>
                                 <th class="px-4 py-2">ID</th>
                                 <th class="px-4 py-2">ID de Edición</th>
-                                <th class="px-4 py-2">Fecha Inicial</th>
-                                <th class="px-4 py-2">Fecha Final</th>
+                                <th class="px-4 py-2">Curso</th>
+                                <th class="px-4 py-2">Número de olimpiada</th>
                                 <th class="px-4 py-2">Enlace de moddle</th>
                             </tr>
                         </thead>
@@ -25,8 +25,8 @@
                                 <tr>
                                     <td class="border px-4 py-2">{{ $curso->id }}</td>
                                     <td class="border px-4 py-2">{{ $curso->edicion_id }}</td>
-                                    <td class="border px-4 py-2">{{ $curso->fecha_inicial }}</td>
-                                    <td class="border px-4 py-2">{{ $curso->fecha_final }}</td>
+                                    <td class="border px-4 py-2">{{ $curso->curso }}</td>
+                                    <td class="border px-4 py-2">{{ $curso->num_olimpiada }}</td>
                                     <td class="border px-4 py-2">{{ $curso->enlace_moddle }}</td>
 
                                     <td class="border px-4 py-2">

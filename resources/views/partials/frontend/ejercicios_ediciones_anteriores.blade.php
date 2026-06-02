@@ -20,11 +20,10 @@
     </ul>
     <p>La siguiente es la relación de cursos en las que se han publicado los ejercicios de las últimas ediciones:</p>
     <ul>
-        @foreach ($total_ediciones->sortByDesc('num_olimpiada') as $edicion)
+        @foreach ($total_ediciones->reverse() as $edicion)
             <li class="icon solid">
-                <a href="{{ $edicion->cursos?->enlace_moddle }}">
-                    <h4><b>{{ $edicion->num_olimpiadas_romano }} Olimpiadas</b> (Curso {{ $edicion->cursos?->fecha_inicial }} -
-                        {{ $edicion->cursos?->fecha_final }})</h4>
+                <a href="{{ $edicion->cursos->enlace_moddle }}">
+                    <h4><b>{{ $edicion->cursos->num_olimpiadas_romano }} Olimpiadas</b> (Curso {{ $edicion->cursos->curso }})</h4>
                 </a>
             </li>
         @endforeach

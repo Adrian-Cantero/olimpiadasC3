@@ -28,15 +28,15 @@ class CursoController extends Controller
     {
         $request->validate([
             'edicion_id' => ['required', 'unique:cursos'],
-            'fecha_inicial' => ['required', 'integer', 'digits:4', 'between:2020,2100'],
-            'fecha_final' => ['required', 'integer', 'digits:4', 'between:2020,2100'],
+            'curso' => ['required'],
+            'num_olimpiada' => ['required', 'integer'],
             'enlace_moddle' => ['required', 'unique:cursos'],
         ]);
 
         Curso::create([
             'edicion_id' => $request->edicion_id,
-            'fecha_inicial' => $request->fecha_inicial,
-            'fecha_final' => $request->fecha_final,
+            'curso' => $request->curso,
+            'num_olimpiada' => $request->num_olimpiada,
             'enlace_moddle' => $request->enlace_moddle,
         ]);
 
@@ -54,15 +54,15 @@ class CursoController extends Controller
     {
         $request->validate([
             'edicion_id' => ['required', Rule::unique('cursos', 'edicion_id')->ignore($curso->id)],
-            'fecha_inicial' => ['required', 'integer', 'digits:4', 'between:2020,2100'],
-            'fecha_final' => ['required', 'integer', 'digits:4', 'between:2020,2100'],
+            'curso' => ['required'],
+            'num_olimpiada' => ['required'],
             'enlace_moddle' => ['required', Rule::unique('cursos', 'enlace_moddle')->ignore($curso->id)],
         ]);
 
         $curso->update([
             'edicion_id' => $request->edicion_id,
-            'fecha_inicial' => $request->fecha_inicial,
-            'fecha_final' => $request->fecha_final,
+            'curso' => $request->fecha_inicial,
+            'num_olimpiada' => $request->fecha_final,
             'enlace_moddle' => $request->enlace_moddle,
         ]);
 

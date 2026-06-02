@@ -22,12 +22,12 @@
                             </select>
                         </div>
                         <div class="mb-4">
-                            <label for="fecha_inicial" class="block text-gray-700">Fecha Inicial</label>
-                            <input type="number" min="2020" max="2100" name="fecha_inicial" id="fecha_inicial" value="{{ old('fecha_inicial') ?? $curso->fecha_inicial }}" class="w-full border-gray-300 rounded-md">
+                            <label for="curso" class="block text-gray-700">Curso</label>
+                            <input type="text" name="curso" id="curso" value="{{ old('curso') ?? $curso->curso }}" class="w-full border-gray-300 rounded-md">
                         </div>
                         <div class="mb-4">
-                            <label for="fecha_final" class="block text-gray-700">Fecha Final</label>
-                            <input type="number" min="2020" max="2100" name="fecha_final" id="fecha_final" value="{{ old('fecha_final') ?? $curso->fecha_final }}" class="w-full border-gray-300 rounded-md">
+                            <label for="num_olimpiada" class="block text-gray-700">Número de olimpiada</label>
+                            <input type="number" name="num_olimpiada" id="num_olimpiada" value="{{ old('num_olimpiada') ?? $curso->num_olimpiada }}" class="w-full border-gray-300 rounded-md">
                         </div>
                         <div class="mb-4">
                             <label for="enlace_moddle" class="block text-gray-700">Enlace Moddle</label>

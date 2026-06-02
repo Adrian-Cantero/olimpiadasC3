@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('ediciones', function (Blueprint $table) {
             $table->id();
             $table->string('curso_escolar', 10);
-            $table->integer('num_olimpiada');
             $table->date('fecha_celebracion');
             $table->date('fecha_apertura');
             $table->date('fecha_cierre');

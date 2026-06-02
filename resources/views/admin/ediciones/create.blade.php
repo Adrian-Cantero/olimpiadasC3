@@ -17,10 +17,6 @@
                             <input type="text" name="curso_escolar" id="curso_escolar" value="{{ old('curso_escolar') }}" class="w-full border-gray-300 rounded-md">
                         </div>
                         <div class="mb-4">
-                            <label for="num_olimpiada" class="block text-gray-700">Número de Olimpiada</label>
-                            <input type="text" name="num_olimpiada" id="num_olimpiada" value="{{ old('num_olimpiada') }}" class="w-full border-gray-300 rounded-md">
-                        </div>
-                        <div class="mb-4">
                             <label for="fecha_celebracion" class="block text-gray-700">Fecha Celebracion</label>
                             <input type="date" name="fecha_celebracion" id="fecha_celebracion" value="{{ old('fecha_celebracion') }}" class="w-full border-gray-300 rounded-md">
                         </div>

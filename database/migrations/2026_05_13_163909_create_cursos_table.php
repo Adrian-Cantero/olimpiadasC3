@@ -17,8 +17,10 @@ return new class extends Migration
             $table->unsignedBigInteger('edicion_id');
             $table->foreign('edicion_id')->references('id')->on('ediciones')->onDelete('cascade');
 
-            $table->year('fecha_inicial');
-            $table->year('fecha_final');
+            $table->integer('num_olimpiada');
+
+            $table->string('curso');
+
             $table->string('enlace_moddle');
 
             $table->timestamps();

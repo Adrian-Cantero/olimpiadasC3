@@ -15,8 +15,8 @@ class CursoSeeder extends Seeder
         \App\Models\Curso::truncate();
         foreach (self::$cursos as $curso) {
             \App\Models\Curso::create([
-                'fecha_inicial' => $curso['fecha_inicial'],
-                'fecha_final' => $curso['fecha_final'],
+                'curso' => $curso['curso'],
+                'num_olimpiada' => $curso['num_olimpiada'],
                 'edicion_id' => $curso['edicion_id'],
                 'enlace_moddle' => $curso['enlace_moddle']
             ]);
@@ -24,10 +24,10 @@ class CursoSeeder extends Seeder
     }
 
     private static $cursos = array (
-        array('fecha_inicial' => 2021, 'fecha_final' => 2022, 'edicion_id' => 1, 'enlace_moddle' => 'https://cifpcarlos3.net/codeweek/course/view.php?id=13'),
-        array('fecha_inicial' => 2022, 'fecha_final' => 2023, 'edicion_id' => 2, 'enlace_moddle' => 'https://cifpcarlos3.net/codeweek/course/view.php?id=10'),
-        array('fecha_inicial' => 2023, 'fecha_final' => 2024, 'edicion_id' => 3, 'enlace_moddle' => 'https://cifpcarlos3.net/codeweek/course/view.php?id=9'),
-        array('fecha_inicial' => 2024, 'fecha_final' => 2026, 'edicion_id' => 4, 'enlace_moddle' => 'https://cifpcarlos3.net/codeweek/course/view.php?id=7')
+        array('curso' => '2021-2022', 'num_olimpiada' => 13, 'edicion_id' => 1, 'enlace_moddle' => 'https://cifpcarlos3.net/codeweek/course/view.php?id=13'),
+        array('curso' => '2022-2023', 'num_olimpiada' => 14, 'edicion_id' => 2, 'enlace_moddle' => 'https://cifpcarlos3.net/codeweek/course/view.php?id=10'),
+        array('curso' => '2023-2024', 'num_olimpiada' => 15, 'edicion_id' => 3, 'enlace_moddle' => 'https://cifpcarlos3.net/codeweek/course/view.php?id=9'),
+        array('curso' => '2024-2025', 'num_olimpiada' => 16, 'edicion_id' => 4, 'enlace_moddle' => 'https://cifpcarlos3.net/codeweek/course/view.php?id=7')
     );
 
 }

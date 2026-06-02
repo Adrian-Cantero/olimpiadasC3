@@ -52,8 +52,7 @@ Route::prefix('/dashboard')->middleware(['auth', 'verified'])->group(function ()
     Route::resource('ediciones', EdicionController::class)
         ->parameters(['ediciones' => 'edicion']);
     Route::resource('cursos', CursoController::class)
-        ->parameters(['cursos' => 'curso'])
-        ->except(['delete']);
+        ->parameters(['cursos' => 'curso']);
     Route::resource('resultados', ResultadoController::class);
     Route::resource('grados', GradoController::class);
     Route::get('grupos/{grupo}/crearUsuarioMoodle', [GrupoController::class, 'crearUsuarioMoodle'])->name('grupos.crearUsuarioMoodle');

@@ -17,8 +17,8 @@ class CursoResource extends JsonResource
         return [
             'id' => $this->id,
             'edicion_id' => $this->edicion_id,
-            'fecha_inicial' => $this->fecha_inicial,
-            'fecha_final' => $this->fecha_final,
+            'curso' => $this->curso,
+            'num_olimpiada' => $this->num_olimpiada,
             'enlace_moddle' => $this->enlace_moddle,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,

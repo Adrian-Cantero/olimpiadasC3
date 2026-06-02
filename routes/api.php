@@ -20,5 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::prefix('v1')->group(function () {
-    Route::apiResource('cursos', CursoController::class);
+    Route::apiResource('cursos', CursoController::class)->only('index');
 });
